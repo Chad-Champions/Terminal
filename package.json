@@ -1,0 +1,27 @@
+{
+  "name": "terminal",
+  "version": "1.0.0",
+  "description": "A Discord Bot made using JavaScript",
+  "main": "app.js",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chad-Champions/Terminal.git"
+  },
+  "engines": {
+    "node": "16.9.1"
+  },
+  "scripts": {
+    "test": "npm test",
+    "start": "node app.js"
+  },
+  "author": "Chad Champions",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "@discordjs/builders": "^0.6.0",
+    "@discordjs/opus": "^0.6.0",
+    "@discordjs/rest": "^0.1.0-canary.0",
+    "discord-api-types": "^0.23.1",
+    "discord.js": "^13.1.0"
+  }
+}

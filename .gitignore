@@ -1,0 +1,6 @@
+# Dependancies and Auto-Generated Files
+package-lock.json
+/node_modules
+
+# Secrets
+config.js
