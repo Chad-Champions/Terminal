@@ -1,5 +1,4 @@
-# Dependancies and Auto-Generated Files
-package-lock.json
+# Dependencies and Auto-Generated Files
 /node_modules
 
 # Secrets
