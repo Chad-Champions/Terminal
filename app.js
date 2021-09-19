@@ -14,11 +14,7 @@ const functions = fs.readdirSync("./src/functions").filter(file  => file.endsWit
         const handler = (await import(`./src/functions/${file}`)).default;
         handler(client);
     }
+    client.handleCommands(commands, "./src/commands");
     client.handleEvents(events, "./src/events");
-    client.handleCommands(commands, "./src/commands")
     client.login(config.token);
-    client.guilds.cache.forEach(guild => {
-        guild.commands.set([])
-        console.log(guild.name)
-    });
 })();
