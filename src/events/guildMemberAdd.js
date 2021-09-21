@@ -6,6 +6,7 @@ export const name = 'guildMemberAdd';
 export const on = 'true';
 export async function execute(event, client) {
     const welcomeChannel = await client.channels.cache.get(config.welcomeChannel);
+    if(!welcomeChannel) return;
     const user = await client.users.fetch(event.user.id);
 
     user.createDM().then(message => {

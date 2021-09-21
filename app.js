@@ -2,7 +2,10 @@ import { Client, Collection } from "discord.js";
 import fs from "fs";
 import config from "./config.js";
 
-const client = new Client({ intents: 32767 });
+const client = new Client(
+    { intents: 32767,
+    partials: ['MESSAGE', 'CHANNEL', 'REACTION'],
+});
 client.commands = new Collection();
 
 const commands = fs.readdirSync("./src/commands"); 
