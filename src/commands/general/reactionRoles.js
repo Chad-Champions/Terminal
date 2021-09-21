@@ -1,7 +1,7 @@
 import { SlashCommandBuilder } from '@discordjs/builders';
 import Discord, { Permissions } from 'discord.js';
 import roleReactions from '../../utils/roleReactions.js';
-import config from '../../config.js';
+import config from '../../../config.js';
 
 const react = {
     data: new SlashCommandBuilder()
