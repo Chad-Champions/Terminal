@@ -7,12 +7,12 @@ client.commands = new Collection();
 
 const commands = fs.readdirSync("./src/commands"); 
 const events = fs.readdirSync("./src/events").filter(file  => file.endsWith(".js")); 
-const functions = fs.readdirSync("./src/functions").filter(file  => file.endsWith(".js")); 
+const handlers = fs.readdirSync("./src/handlers").filter(file  => file.endsWith(".js")); 
 
 (async () => {
-    for(const file of functions) {
-        const handler = (await import(`./src/functions/${file}`)).default;
-        handler(client);
+    for(const handler of handlers) {
+        const imports = (await import(`./src/handlers/${handler}`)).default;
+        imports(client);
     }
     client.handleCommands(commands, "./src/commands");
     client.handleEvents(events, "./src/events");
