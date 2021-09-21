@@ -15,7 +15,7 @@ const react = {
                 return interaction.reply({ content: "This command can only be used in the configured Reaction Roles channel!" })
             }
             let embed = new Discord.MessageEmbed()
-                .setColor(0xFF0000)
+                .setColor('#05055e')
                 .setTitle("Reaction event")
                 .setDescription(`Choose the Emotes you want!`);
             const MessageEmbed = await interaction.channel.send({ embeds: [embed]});
