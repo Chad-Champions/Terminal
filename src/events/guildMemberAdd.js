@@ -1,14 +1,15 @@
-import fs from 'fs';
 import { welcomeImage } from 'discord-welcome-card';
+import fs from 'fs';
 import config from '../../config.js';
 
 export const name = 'guildMemberAdd';
 export const on = 'true';
 export async function execute(event, client) {
-    const welcomeChannel = await client.channels.cache.get(config.welcomeChannel);
-    if(!welcomeChannel) return;
     const user = await client.users.fetch(event.user.id);
-
+    const welcomeChannel = await client.channels.cache.get(config.welcomeChannel);
+    
+    if(!welcomeChannel) return;
+    
     user.createDM().then(message => {
         message.send(`Hello and welcome again to ${event.guild}! Feel free to reply with any questions!`);
     }).catch(err => {

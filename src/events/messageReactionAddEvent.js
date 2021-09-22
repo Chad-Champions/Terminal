@@ -9,12 +9,12 @@ export async function execute(reaction, user, client) {
         const role = await reaction.message.guild.roles.cache.find(role => role.name === roleReactions[reaction.emoji.name]);
         if(role) {
             await reaction.message.guild.members.cache.get(user.id).roles.add(role);
-            const User = await client.users.fetch(user.id);
-            User.createDM().then(message => {
-                message.send(`You have been given the role: ${role.name}`);
+            const member = await client.users.fetch(user.id);
+            member.createDM().then(message => {
+                message.send(`You have been given the role: ${role.name}.`);
             }).catch(err => {
                 console.error(err);
             });
         }
     }
-}
+};
