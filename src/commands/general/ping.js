@@ -5,7 +5,8 @@ const ping = {
         .setName('ping')
         .setDescription('Displays the ping'),
     async execute(interaction) {
-        interaction.reply({ content: 'Pong!' })
+        const message = await interaction.reply({ content: 'Pinging...', fetchReply: true });
+        interaction.editReply(`Bot Latency: ${message.createdTimestamp - interaction.createdTimestamp}ms \nDiscord API Latency: ${interaction.client.ws.ping}ms`);
     }
 };
 
