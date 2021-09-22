@@ -20,7 +20,7 @@ const botInfo = {
         )
         .setFooter(`${interaction.client.application.owner.name} | Bot Developer`, interaction.client.application.owner.iconURL()); 
 
-        await interaction.reply({ embeds: [botInfoEmbed], ephemeral: true});
+        await interaction.reply({ embeds: [botInfoEmbed], ephemeral: true });
     }
 };
 
