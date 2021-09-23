@@ -24,7 +24,7 @@ const serverInfo = {
             { name: '**Boost Tier**', value: interaction.guild.premiumTier, inline: true },
             { name: '**Boost Count**', value: `${interaction.guild.premiumSubscriptionCount}`, inline: true }
         )
-        .setFooter(`${interaction.client.user.username} | © 2022`, interaction.client.user.avatarURL()); 
+        .setFooter(`${interaction.client.user.username} | © ${new Date().getFullYear()}`, interaction.client.user.avatarURL()); 
 
         await interaction.reply({ embeds: [serverInfoEmbed], ephemeral: true });
     }

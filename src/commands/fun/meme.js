@@ -24,7 +24,7 @@ const meme = {
                     .setTitle(result.data.title)
                     .setURL(result.data.url)
                     .setImage(result.data.image)
-                    .setFooter(`${interaction.client.user.username} | © 2022`, interaction.client.user.avatarURL());
+                    .setFooter(`${interaction.client.user.username} | © ${new Date().getFullYear()}`, interaction.client.user.avatarURL());
 
                     interaction.reply({ embeds: [memeEmbed] });
                 }
