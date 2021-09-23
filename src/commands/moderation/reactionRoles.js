@@ -11,9 +11,9 @@ const react = {
             if(!interaction.member.permissions.has(Permissions.FLAGS.ADMINISTRATOR)) {
                 return interaction.reply({ content: "This command is for Admins only!" })
             }
-            if(interaction.message.channel.id != config.reactionRolesChannel) {
-                return interaction.reply({ content: "This command can only be used in the configured Reaction Roles channel!" })
-            }
+            // if(interaction.message.channel.id != config.reactionRolesChannel) {
+            //     return interaction.reply({ content: "This command can only be used in the configured Reaction Roles channel!" })
+            // }
             const embed = new MessageEmbed()
                 .setColor('#05055e')
                 .setTitle('Reaction Event')
