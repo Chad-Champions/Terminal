@@ -24,6 +24,7 @@ const meme = {
                     .setTitle(result.data.title)
                     .setURL(result.data.url)
                     .setImage(result.data.image)
+                    .addField(`r/${subredditChoice}`, `👍 ${result.data.upvotes} 👎 ${result.data.downvotes} 💬 ${result.data.comments}`, true)
                     .setFooter(`${interaction.client.user.username} | © ${new Date().getFullYear()}`, interaction.client.user.avatarURL());
 
                     interaction.reply({ embeds: [memeEmbed] });
