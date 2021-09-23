@@ -1,6 +1,6 @@
 const config = {
     token: process.env.token,
-    guildID: proces.env.guildID,
+    guildID: process.env.guildID,
     clientID: process.env.clientID,
     welcomeChannel: process.env.welcomeChannel,
     reactionRolesChannel: process.env.reactionRolesChannel,
