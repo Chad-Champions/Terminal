@@ -6,7 +6,7 @@ const meme = {
     data: new SlashCommandBuilder()
         .setName('meme')
         .setDescription('Generates a random Reddit meme')
-        .addStringOption(option => option.setName('subreddit').setDescription('Enter the name of a valid Reddit subreddit').setRequired(true)),
+        .addStringOption(option => option.setName('subreddit r/').setDescription('Enter the name of a valid Reddit subreddit').setRequired(true)),
     async execute(interaction) {
         const subredditChoice = interaction.options.getString('subreddit');
 
