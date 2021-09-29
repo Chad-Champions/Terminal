@@ -3,4 +3,5 @@ const roleReactions = {
     "🔥" : "Fire",
     "💥" : "Explosion"
 }
+
 export default roleReactions;
