@@ -24,6 +24,7 @@ A multipurpose Discord server bot created using the official JavaScript Discord 
 
 ### Server Moderation
 * <code>/ban:</code> Bans a member from the server.
+* <code>/invite:</code> Creates an invite link to the server.
 * <code>/kick:</code> Kicks a member from the server.
 * <code>/react:</code> Sends a message containing reaction roles specified in <code>src/utils/roleReactions.js</code>.
 
