@@ -6,7 +6,7 @@ import config from '../../../config.js';
 const react = {
     data: new SlashCommandBuilder()
         .setName('react')
-        .setDescription('Lists all the roles that can be used as reactions.'),
+        .setDescription('Lists all the roles that can be used as reactions'),
         async execute(interaction) {
             if(!interaction.member.permissions.has(Permissions.FLAGS.ADMINISTRATOR)) {
                 return interaction.reply({ content: "This command is for Admins only!" })
