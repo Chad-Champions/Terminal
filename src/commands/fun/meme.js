@@ -10,31 +10,31 @@ const meme = {
     async execute(interaction) {
         const subredditChoice = interaction.options.getString('subreddit');
 
-        fetch(`https://meme-api-node-js.herokuapp.com/api/${subredditChoice}`, {
+        const memeFetch = await fetch(`https://memes.rafi-codes.dev/api/reddit/${subredditChoice}`, {
             "method": 'GET',
             "headers": {
-                'Accept': 'application/json'
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
             },
             'mode': 'cors'
-        }).then(response => {
-            response.json().then(result => {
-                if(result.success) {
-                    const memeEmbed = new MessageEmbed()
-                    .setColor('#05055e')
-                    .setTitle(result.data.title)
-                    .setURL(result.data.url)
-                    .setImage(result.data.image)
-                    .addField(`r/${subredditChoice}`, `👍 ${result.data.upvotes} 👎 ${result.data.downvotes} 💬 ${result.data.comments}`, true)
-                    .setFooter(`${interaction.client.user.username} | © ${new Date().getFullYear()}`, interaction.client.user.avatarURL());
+        });
 
-                    interaction.reply({ embeds: [memeEmbed] });
-                }
-                else {
-                    return interaction.reply({ content: 'Sorry, we failed to fetch the meme you are looking for. Please try again.' });
-                }
-            });
-        }).catch(err => console.log(err));
-        
+        const data = await memeFetch.json();
+
+        if (memeFetch.ok) {
+            const memeEmbed = new MessageEmbed()
+            .setColor('#05055e')
+            .setTitle(data.title)
+            .setURL(data.url)
+            .setImage(data.image)
+            .addField(`r/${subredditChoice}`, `👍 ${data.score} 💬 ${data.comments}`, true)
+            .setFooter(`${interaction.client.user.username} | © ${new Date().getFullYear()}`, interaction.client.user.avatarURL());
+
+            return interaction.reply({ embeds: [memeEmbed] });
+        }
+        else {
+            return interaction.reply({ content: 'Sorry, we failed to fetch the meme you are looking for. Please try again.' });
+        }
     }
 };
 
