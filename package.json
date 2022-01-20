@@ -15,16 +15,16 @@
     "url": "https://github.com/Chad-Champions/Terminal.git"
   },
   "dependencies": {
-    "@discordjs/builders": "^0.6.0",
-    "@discordjs/opus": "^0.6.0",
-    "@discordjs/rest": "^0.1.0-canary.0",
-    "discord-api-types": "^0.23.1",
-    "discord-welcome-card": "^4.0.3",
-    "discord.js": "^13.1.0",
-    "node-fetch": "^3.0.0"
+    "@discordjs/builders": "latest",
+    "@discordjs/opus": "latest",
+    "@discordjs/rest": "latest",
+    "discord-api-types": "latest",
+    "discord-welcome-card": "latest",
+    "discord.js": "latest",
+    "node-fetch": "latest"
   },
   "engines": {
-    "node": "^16.10.0",
-    "npm": "^7.24.1"
+    "node": "^17.3.1",
+    "npm": "^8.3.1"
   }
 }
